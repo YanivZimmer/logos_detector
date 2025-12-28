@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "logos"
+version = "0.1.0"
+description = "Logos detector"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "ultralytics",
+    "pandas",
+    "numpy",
+    "matplotlib",
+    "seaborn",
+    "pillow",
+    "torch",
+    "tqdm",
+    "ipykernel"
+]
+
+[tool.setuptools.packages.find]
+# This prevents setuptools from trying to install your data folders as python packages
+exclude = ["assets*", "raw_data*", "notebooks*", "tests*"]
+
+[tool.setuptools]
+# If your main code is in a specific folder, you can also name it here:
+# packages = ["logos_detector"]
